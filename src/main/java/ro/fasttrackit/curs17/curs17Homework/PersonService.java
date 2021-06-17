@@ -48,8 +48,7 @@ public class PersonService {
 
     public List<Person> ageB() {
         return persons.stream()
-                .filter(person -> person.getAge() > 18)
-                .filter(person -> person.getAge() < 60)
+                .filter(person -> person.getAge() > 18 && person.getAge() < 60)
                 .collect(Collectors.toList());
     }
 
@@ -64,7 +63,7 @@ public class PersonService {
                 .collect(Collectors.toList());
     }
 
-    public List<String> firstNameUnique(){
+    public List<String> firstNameUnique() {
         return persons.stream()
                 .map(Person::getFirstName)
                 .distinct()
